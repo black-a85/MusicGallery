@@ -9,12 +9,14 @@ import android.widget.TextView;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
     Song nowPlayingSong;
-    TextView nowPlayingTextView = findViewById(R.id.now_playing_text_view);
+    TextView nowPlayingTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
+
+        nowPlayingTextView = findViewById(R.id.now_playing_text_view);
 
         final Album album = getIntent().getParcelableExtra("album name");
         nowPlayingSong = getIntent().getParcelableExtra("now playing song");

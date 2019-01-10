@@ -9,7 +9,7 @@
     <ImageView
         android:contentDescription="@string/album_art_description"
         android:alpha="0.2"
-        android:id="@+id/album_detail_art_image_view"
+        android:id="@+id/album_art_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"

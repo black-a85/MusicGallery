@@ -3,13 +3,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SongAdapter extends ArrayAdapter<Song> {
     private Context mContext;
@@ -29,10 +29,10 @@ public class SongAdapter extends ArrayAdapter<Song> {
         }
 
         if (song != null){
-            TextView songNameView = listItemView.findViewById(R.id.song_name);
+            TextView songNameView = listItemView.findViewById(R.id.song_name_text_view);
             songNameView.setText(song.getName());
-            TextView songDurationView = listItemView.findViewById(R.id.song_duration);
-            String songDuration = String.format("%02d:%02d", song.getDuration() / 60, song.getDuration() % 60);
+            TextView songDurationView = listItemView.findViewById(R.id.song_duration_text_view);
+            String songDuration = String.format(Locale.getDefault(), "%02d:%02d", song.getDuration() / 60, song.getDuration() % 60);
             songDurationView.setText(songDuration);
             Button playButton = listItemView.findViewById(R.id.song_play_button);
             playButton.setOnClickListener(new View.OnClickListener() {
