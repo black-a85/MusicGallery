@@ -45,6 +45,15 @@ public class SongAdapter extends ArrayAdapter<Song> {
                     }
                 }
             });
+            Button addSongToPlayList = listItemView.findViewById(R.id.add_song_to_play_list_button);
+            addSongToPlayList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mContext instanceof AlbumDetailsActivity) {
+                        ((AlbumDetailsActivity) mContext).addSongToPlaylist(song);
+                    }
+                }
+            });
         }
         return listItemView;
     }

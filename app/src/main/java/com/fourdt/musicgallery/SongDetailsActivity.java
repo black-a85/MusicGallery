@@ -8,12 +8,12 @@ import android.widget.TextView;
 import java.util.Locale;
 
 
-public class SongPlayingActivity extends AppCompatActivity {
+public class SongDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_song_playing);
+        setContentView(R.layout.activity_song_details);
         Song song = getIntent().getParcelableExtra("now playing song");
         Album album = getIntent().getParcelableExtra("album name");
         TextView nowPlayingSong = findViewById(R.id.song_name_text_view);

@@ -2,5 +2,7 @@
     <string name="app_name">Music Gallery</string>
     <string name="album_art_description">album art</string>
     <string name="no_track_playing">no Track Playing</string>
+    <string name="album_details_activity_label">Album Details</string>
+    <string name="song_details_activity_label">Song Details</string>
 
 </resources>

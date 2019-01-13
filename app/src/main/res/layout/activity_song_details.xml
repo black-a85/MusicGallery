@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SongPlayingActivity">
+    tools:context=".SongDetailsActivity">
 
     <ImageView
         android:id="@+id/album_art_image_view"
+        android:contentDescription="@string/album_art_description"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:scaleType="centerCrop"

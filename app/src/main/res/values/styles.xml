@@ -12,5 +12,6 @@
     <dimen name="gridSpacing">10dp</dimen>
     <dimen name="padding">8dp</dimen>
     <dimen name="nowPlayingPadding">16dp</dimen>
+    <dimen name="buttonDimension">40dp</dimen>
 
 </resources>

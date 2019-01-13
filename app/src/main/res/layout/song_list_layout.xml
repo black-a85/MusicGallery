@@ -25,8 +25,15 @@
 
     <Button
         android:id="@+id/song_play_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        app:layout_constraintRight_toLeftOf="@id/add_song_to_play_list_button"
         android:background="@mipmap/play_button"/>
+
+    <Button
+        android:id="@+id/add_song_to_play_list_button"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        android:background="@mipmap/add_song_to_play_list"
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

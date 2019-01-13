@@ -26,6 +26,10 @@ public class Album implements Parcelable {
         mSongs.add(new Song(name,duration));
     }
 
+    public void addSong(String name, int minuteDuration, int secondsDuration) {
+        mSongs.add(new Song(name, (minuteDuration * 60) + secondsDuration));
+    }
+
     public String getAlbumName() {
         return mAlbumName;
     }
