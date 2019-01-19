@@ -87,6 +87,9 @@ public class AlbumDetailsActivity extends AppCompatActivity {
                 if (trackNumber > 0) {
                     trackNumber--;
                     updateNowPlaying();
+                } else if (trackNumber == 0) {
+                    Toast.makeText(AlbumDetailsActivity.this, "this is the first track in playlist",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -99,6 +102,9 @@ public class AlbumDetailsActivity extends AppCompatActivity {
                 if (trackNumber < playlist.size() - 1) {
                     trackNumber++;
                     updateNowPlaying();
+                } else if (trackNumber == playlist.size() - 1) {
+                    Toast.makeText(AlbumDetailsActivity.this, "this is the last track in playlist",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         albums.get(2).addSong("Wasted Time", 4, 55);
         albums.get(2).addSong("Wasted Time (Reprise)", 1, 22);
         albums.get(2).addSong("Victim Of Love", 4, 11);
-        albums.get(2).addSong("Pretty Maids All In A Row", 4, 05);
+        albums.get(2).addSong("Pretty Maids All In A Row", 4, 5);
         albums.get(2).addSong("Try And Love Again", 5, 10);
         albums.get(2).addSong("The Last Resort", 7, 25);
 
