@@ -8,8 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <dimen name="gridColumnWidth">90dp</dimen>
-    <dimen name="gridSpacing">10dp</dimen>
+    <dimen name="gridColumnWidth">120dp</dimen>
+    <dimen name="gridSpacing">12dp</dimen>
     <dimen name="padding">8dp</dimen>
     <dimen name="nowPlayingPadding">16dp</dimen>
     <dimen name="buttonDimension">40dp</dimen>

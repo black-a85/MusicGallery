@@ -28,6 +28,7 @@
         android:layout_width="@dimen/buttonDimension"
         android:layout_height="@dimen/buttonDimension"
         app:layout_constraintRight_toLeftOf="@id/add_song_to_play_list_button"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@mipmap/play_button"/>
 
     <Button
@@ -35,5 +36,6 @@
         android:layout_width="@dimen/buttonDimension"
         android:layout_height="@dimen/buttonDimension"
         android:background="@mipmap/add_song_to_play_list"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

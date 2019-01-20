@@ -12,14 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/song_name_text_view"
+        android:id="@+id/now_playing_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="song name"
         android:padding="@dimen/padding"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/album_art_image_view" />
 
     <TextView
@@ -28,7 +30,8 @@
         android:layout_height="wrap_content"
         android:hint="song duration"
         android:padding="@dimen/padding"
-        app:layout_constraintTop_toBottomOf="@id/song_name_text_view" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/now_playing_text_view" />
 
     <TextView
         android:id="@+id/album_name_text_view"
@@ -36,6 +39,7 @@
         android:layout_height="wrap_content"
         android:hint="album name"
         android:padding="@dimen/padding"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/song_duration_text_view" />
 
     <TextView
@@ -44,6 +48,48 @@
         android:layout_height="wrap_content"
         android:hint="artist name"
         android:padding="@dimen/padding"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/album_name_text_view" />
+
+    <Button
+        android:id="@+id/previous_track_button"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        android:background="@mipmap/previous"
+        android:gravity="center"
+        android:padding="@dimen/nowPlayingPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+    <Button
+        android:id="@+id/song_play_stop_button"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        android:background="@mipmap/play"
+        android:gravity="center"
+        android:padding="@dimen/nowPlayingPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/next_track_button" />
+
+    <Button
+        android:id="@+id/next_track_button"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        android:background="@mipmap/next"
+        android:gravity="center"
+        android:padding="@dimen/nowPlayingPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/show_playlist" />
+
+    <Button
+        android:id="@+id/show_playlist"
+        android:layout_width="@dimen/buttonDimension"
+        android:layout_height="@dimen/buttonDimension"
+        android:background="@mipmap/play_play_list_button"
+        android:gravity="center"
+        android:padding="@dimen/nowPlayingPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

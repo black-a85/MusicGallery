@@ -15,11 +15,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
-    Song nowPlayingSong;
-    ArrayList<Song> playlist;
-    int trackNumber;
-    boolean isPlaying = false;
-    TextView nowPlayingTextView;
+    private ArrayList<Song> playlist;
+    private int trackNumber;
+    private boolean isPlaying = false;
+    private TextView nowPlayingTextView;
+    private Button playStopButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         nowPlayingTextView = findViewById(R.id.now_playing_text_view);
 
         final Album album = getIntent().getParcelableExtra("album name");
-        nowPlayingSong = getIntent().getParcelableExtra("now playing song");
+        trackNumber = getIntent().getIntExtra("now playing song", 0);
         playlist = getIntent().getParcelableExtra("play list");
         updateNowPlaying();
         TextView albumName = findViewById(R.id.album_name_text_view);
@@ -42,9 +42,9 @@ public class AlbumDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent songPlaying = new Intent(AlbumDetailsActivity.this, SongDetailsActivity.class);
-                songPlaying.putExtra("now playing song", nowPlayingSong);
+                songPlaying.putExtra("now playing track", trackNumber);
                 songPlaying.putExtra("album name", album);
-                songPlaying.putExtra("play list", playlist);
+                songPlaying.putExtra("playlist", playlist);
                 startActivity(songPlaying);
             }
         });
@@ -64,7 +64,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
             }
         });
 
-        final Button playStopButton = findViewById(R.id.song_play_stop_button);
+        playStopButton = findViewById(R.id.song_play_stop_button);
         playStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,10 +113,13 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
     public void playSong (Song song){
         playlist = new ArrayList<>();
+        isPlaying = true;
+        playStopButton.setBackgroundResource(R.mipmap.pause);
         playlist.add(song);
         trackNumber = 0;
         updateNowPlaying();
         checkPlaylist();
+        Toast.makeText(AlbumDetailsActivity.this, "playing " + song.getName(), Toast.LENGTH_SHORT).show();
     }
 
     public void addSongToPlaylist(Song song) {
